@@ -13,7 +13,7 @@ let intervalId = null;
 btnState();
 
 function onStartBtnClick() {
-  setBodyColor();
+  switchBodyColor();
   isActive = true;
   btnState();
 }
@@ -24,14 +24,14 @@ function onStopBtnClick() {
   btnState();
 }
 
-function setBodyColor() {
-  getBodyColor();
+function switchBodyColor() {
+  setBodyColor();
   intervalId = setInterval(() => {
-    getBodyColor();
+    setBodyColor();
   }, PROMPT_DELAY);
 }
 
-function getBodyColor() {
+function setBodyColor() {
   body.style.backgroundColor = getRandomHexColor();
 }
 
